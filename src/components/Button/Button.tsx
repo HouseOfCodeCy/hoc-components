@@ -24,7 +24,7 @@ const StyledButton = styled.button<CustomButtonProps>`
     }
     &:active {
         border: solid 2px #1b116e;
-        padding: ${props => props.size === 'small'? '5px 23px 6px' : (props.size === 'medium'? '7px 28px 9px' : '12px 28px 14px' )};
+        padding: ${props => props.size === 'small' ? '5px 23px 6px' : (props.size === 'medium'? '7px 28px 9px' : '12px 28px 14px' )};
     }
 `;
 

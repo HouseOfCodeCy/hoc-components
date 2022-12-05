@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
 	'env': {
 		'browser': true,
@@ -35,6 +36,19 @@ module.exports = {
 		'semi': [
 			'error',
 			'always'
+		],
+		'object-curly-newline': [
+			'error',
+			{
+				'ObjectExpression': 'always',
+				'ObjectPattern': {
+					'multiline': true 
+				},
+				'ImportDeclaration': {
+					'multiline': true, 'minProperties': 4 
+				},
+				'ExportDeclaration': 'never'
+			}
 		]
 	}
 };
