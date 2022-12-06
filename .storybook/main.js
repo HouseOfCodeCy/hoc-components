@@ -6,7 +6,21 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    '@storybook/preset-create-react-app',
+    'storybook-addon-designs'
   ],
-  "framework": "@storybook/react"
+  "framework": "@storybook/react",
+  core: {
+    builder: '@storybook/builder-webpack5',
+  },
+  typescript: {
+    check: true,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules\/@types\/react/.test(prop.parent.fileName) : true),
+    },
+  },
 }
