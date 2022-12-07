@@ -2,3 +2,4 @@
 storybook-static
 lib
 dist
+node_modules
