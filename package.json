@@ -1,5 +1,5 @@
 {
-  "name": "hoc-components",
+  "name": "@hoc/hoc-components",
   "version": "1.0.1",
   "description": "A component library for HoC",
   "main": "./lib/cjs/index.js",
@@ -10,7 +10,11 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
-    "build": "tsc "
+    "build": "rm -rf ./dist && tsc && yarn run postbuild",
+    "postbuild": "yarn build-sass && yarn copy-files && yarn copy-sass",
+    "build-sass": "sass --load-path=./node_modules --load-path=./ src/styles/theme.scss dist/styles/theme.scss",
+    "copy-files": "copyfiles -f package.json dist",
+    "copy-sass": "copyfiles -f src/styles/**/* -e src/styles/theme.scss dist/styles"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -33,6 +37,7 @@
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
+    "copyfiles": "^2.4.1",
     "css-loader": "^6.7.2",
     "eslint": "^8.29.0",
     "eslint-plugin-react": "^7.31.11",
@@ -54,7 +59,11 @@
   },
   "peerDependencies": {
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "sass": ">=1.56.1",
+    "bootstrap": ">=5.1.3",
+    "primeicons": ">=6.0.1",
+    "primereact": ">=8.7.3"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
