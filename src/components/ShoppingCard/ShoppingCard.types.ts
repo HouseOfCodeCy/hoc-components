@@ -1,3 +1,7 @@
+import {Product} from '../../interfaces/types';
+
 export interface ShoppingCard {
-    elementId?: string
+    saveButtonLabel?: string
+    cancelButtonLabel?: string
+    products?: Product[]
 }
