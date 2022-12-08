@@ -13,7 +13,7 @@
     "build": "tsc "
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://npm.pkg.github.com"
   },
   "license": "MIT",
   "devDependencies": {
