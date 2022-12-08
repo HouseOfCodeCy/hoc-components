@@ -13,10 +13,10 @@ export interface ShoppingCardProps extends CardProps, ShoppingCard {
 export const ShoppingCardComponent: FC<ShoppingCardProps> = ({...props}) => {
 	const { title,subTitle,saveButtonLabel = 'Save', cancelButtonLabel='Cancel', products = PRODUCTS } = props;
 	const footer = (
-		<span>
-			<Button className={'cart-button xs-2'} label={saveButtonLabel} icon="pi pi-cart-plus" />
-			<Button className={'cart-button p-button-warning'} label={cancelButtonLabel} icon="pi pi-times" />
-		</span>
+		<div className='shopping-cart-footer row'>
+			<Button className={'cart-button xs-6'} label={saveButtonLabel} icon="pi pi-cart-plus" iconPos='left' />
+			<Button className={'cart-button xs-6 p-button-warning'} label={cancelButtonLabel} icon="pi pi-times" iconPos='left' />
+		</div>
 	);
 
 	const RenderProducts = () => {

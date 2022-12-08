@@ -8,7 +8,7 @@ export interface ShoppingCardProductProps {
 export const ShoppingCardProduct: FC<ShoppingCardProductProps> = ({...props}) => {
 	const {product} = props;
 	return (
-		<div className='shopping-card-product row'>
+		<div className='shopping-card-product container'>
 			<div className='row'>
 				<div className="col-sm-8 title">
 					{product.title}
@@ -18,7 +18,7 @@ export const ShoppingCardProduct: FC<ShoppingCardProductProps> = ({...props}) =>
 				</div>
 			</div>
 			<div className='row'>
-				<div className="col-sm-12 subTitle">
+				<div className="subTitle">
 					{product.subTitle}
 				</div>
 			</div>
