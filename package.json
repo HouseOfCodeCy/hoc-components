@@ -12,6 +12,9 @@
     "build-storybook": "build-storybook",
     "build": "tsc "
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.14",
