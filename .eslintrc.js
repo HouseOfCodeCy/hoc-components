@@ -42,10 +42,10 @@ module.exports = {
 			{
 				'ObjectExpression': 'always',
 				'ObjectPattern': {
-					'multiline': true 
+					'multiline': true
 				},
 				'ImportDeclaration': {
-					'multiline': true, 'minProperties': 4 
+					'multiline': true, 'minProperties': 4
 				},
 				'ExportDeclaration': 'never'
 			}

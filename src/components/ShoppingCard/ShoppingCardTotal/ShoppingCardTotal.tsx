@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Product} from '../../interfaces/types';
+import {Product} from '../../../interfaces/types';
 
 export interface ShoppingCardTotalProps {
     products: Product[]

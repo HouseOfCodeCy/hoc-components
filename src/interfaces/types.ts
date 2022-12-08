@@ -3,5 +3,13 @@ export interface Product{
     title: string;
     subTitle: string;
     price: number;
+    images?: ProductImage[]
+}
+
+export interface ProductImage {
+    id: number;
+    image: any
+    alt: string;
 
 }
+

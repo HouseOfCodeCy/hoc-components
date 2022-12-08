@@ -2,9 +2,9 @@ import React,{FC} from 'react';
 import {ShoppingCard} from './ShoppingCard.types';
 import {Card, CardProps} from 'primereact/card';
 import {Button} from '../Button/Button';
-import {ShoppingCardProduct} from '../ShoppingCardProduct/ShoppingCardProduct';
+import {ShoppingCardProduct} from './ShoppingCardProduct/ShoppingCardProduct';
 import {PRODUCTS} from '../../resources/constants';
-import {ShoppingCardTotal} from '../ShoppingCardTotal/ShoppingCardTotal';
+import {ShoppingCardTotal} from './ShoppingCardTotal/ShoppingCardTotal';
 
 export interface ShoppingCardProps extends CardProps, ShoppingCard {
 

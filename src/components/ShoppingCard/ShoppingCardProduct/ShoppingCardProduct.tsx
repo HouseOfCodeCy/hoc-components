@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Product} from '../../interfaces/types';
+import {Product} from '../../../interfaces/types';
 
 export interface ShoppingCardProductProps {
     product: Product
