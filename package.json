@@ -17,7 +17,7 @@
     "copy-sass": "copyfiles -f src/styles/**/* -e src/styles/theme.scss dist/styles"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@cmario92:registry": "https://npm.pkg.github.com"
   },
   "license": "MIT",
   "devDependencies": {
