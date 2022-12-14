@@ -1,9 +1,8 @@
-import React,{FC} from 'react';
-import {ButtonProps} from './Button.types';
-import {ButtonProps as PrimeButtonProps, Button as PrimeButton} from 'primereact/button';
+import { Button as PrimeButton, ButtonProps as PrimeButtonProps } from 'primereact/button';
+import { ButtonProps } from './Button.types';
 export interface CustomButtonProps extends PrimeButtonProps, ButtonProps {}
 
-export const Button: FC<CustomButtonProps> = ({...props}) => {
+export const Button = (props: PrimeButtonProps) => {
 
 	const CustomButton = () => {
 		return (

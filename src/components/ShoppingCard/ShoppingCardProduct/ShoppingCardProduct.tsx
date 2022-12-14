@@ -1,12 +1,13 @@
-import React, {FC} from 'react';
-import {Product} from '../../../interfaces/types';
+import { FC } from 'react';
+import { Product } from '../../../interfaces/types';
+import { PRODUCTS } from '../../../resources/constants';
 
 export interface ShoppingCardProductProps {
     product: Product
 }
 
 export const ShoppingCardProduct: FC<ShoppingCardProductProps> = ({...props}) => {
-	const {product} = props;
+	const {product = PRODUCTS[0]} = props;
 	return (
 		<div className='shopping-card-product container'>
 			<div className='row'>

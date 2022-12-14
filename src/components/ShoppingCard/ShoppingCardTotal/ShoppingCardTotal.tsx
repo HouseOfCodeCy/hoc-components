@@ -1,5 +1,5 @@
-import React, {FC, useEffect, useState} from 'react';
-import {Product} from '../../../interfaces/types';
+import { FC } from 'react';
+import { Product } from '../../../interfaces/types';
 
 export interface ShoppingCardTotalProps {
     products: Product[]
@@ -7,20 +7,15 @@ export interface ShoppingCardTotalProps {
 
 export const ShoppingCardTotal: FC<ShoppingCardTotalProps> = ({...props}) => {
 	const {products} = props;
-	const [totalPrice, setTotalPrice] = useState(0);
 
-	useEffect(() => {
-		calculateTotalAmount();
-	}, [products]);
-
-	const calculateTotalAmount = (): void => {
+	const calculateTotalAmount = (): number => {
 		let totalPrice = 0;
 		products.forEach((product) => {
 			totalPrice += product?.price;
 		});
-		setTotalPrice(totalPrice);
+		return totalPrice;
 	};
-	
+
 	return (
 		<div className='shopping-card-total row'>
 			<div className='sub-total row'>
@@ -28,7 +23,7 @@ export const ShoppingCardTotal: FC<ShoppingCardTotalProps> = ({...props}) => {
 					Sub-total
 				</div>
 				<div className="col-sm-6 total-price">
-					€{totalPrice}
+					€{calculateTotalAmount()}
 				</div>
 			</div>
 			<div className='delivery-fees-total row'>
@@ -36,7 +31,7 @@ export const ShoppingCardTotal: FC<ShoppingCardTotalProps> = ({...props}) => {
 					Delivery Fees
 				</div>
 				<div className="col-sm-6 total-price">
-					€{totalPrice}
+					€{calculateTotalAmount()}
 				</div>
 			</div>
 			<hr />
@@ -45,7 +40,7 @@ export const ShoppingCardTotal: FC<ShoppingCardTotalProps> = ({...props}) => {
 					Total Amount
 				</div>
 				<div className="col-sm-6 total-price">
-					€{totalPrice}
+					€{calculateTotalAmount()}
 				</div>
 			</div>
 		</div>

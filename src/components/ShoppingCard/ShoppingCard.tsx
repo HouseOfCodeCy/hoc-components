@@ -1,16 +1,16 @@
-import React,{FC} from 'react';
-import {ShoppingCard} from './ShoppingCard.types';
-import {Card, CardProps} from 'primereact/card';
-import {Button} from '../Button/Button';
-import {ShoppingCardProduct} from './ShoppingCardProduct/ShoppingCardProduct';
-import {PRODUCTS} from '../../resources/constants';
-import {ShoppingCardTotal} from './ShoppingCardTotal/ShoppingCardTotal';
+import { Card, CardProps } from 'primereact/card';
+import { FC } from 'react';
+import { PRODUCTS } from '../../resources/constants';
+import { Button } from '../Button/Button';
+import { ShoppingCardType } from './ShoppingCard.types';
+import { ShoppingCardProduct } from './ShoppingCardProduct/ShoppingCardProduct';
+import { ShoppingCardTotal } from './ShoppingCardTotal/ShoppingCardTotal';
 
-export interface ShoppingCardProps extends CardProps, ShoppingCard {
+export interface ShoppingCardProps extends CardProps, ShoppingCardType {
 
 }
 
-export const ShoppingCardComponent: FC<ShoppingCardProps> = ({...props}) => {
+export const ShoppingCard: FC<ShoppingCardProps> = ({...props}) => {
 	const { title,subTitle,saveButtonLabel = 'Save', cancelButtonLabel='Cancel', products = PRODUCTS } = props;
 	const footer = (
 		<div className='shopping-cart-footer row'>

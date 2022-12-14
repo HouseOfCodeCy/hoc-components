@@ -1,14 +1,15 @@
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
-import './styles/theme.scss';
+import 'primeicons/primeicons.css';
 import PrimeReact from 'primereact/api';
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import './styles/theme.scss';
 
 PrimeReact.ripple = true;
 
 export { Button } from './components/Button/Button';
-export { ShoppingCardComponent } from './components/ShoppingCard/ShoppingCard';
-
+export { ShoppingCard } from './components/ShoppingCard/ShoppingCard';
+export { ShoppingCardProduct } from './components/ShoppingCard/ShoppingCardProduct/ShoppingCardProduct';
+export { ShoppingCardTotal } from './components/ShoppingCard/ShoppingCardTotal/ShoppingCardTotal';
+export { Table } from './components/Table/Table';
 
