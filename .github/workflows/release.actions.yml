@@ -1,4 +1,4 @@
-name: Publish Yarn
+name: Publish NPM simple
 
 on:
     release:
@@ -9,25 +9,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+            # Setup .npmrc file to publish to npm
             - uses: actions/setup-node@v3
               with:
-                  node-version: 16
-    publish-gpr:
-        needs: build
-        runs-on: ubuntu-latest
-        permissions:
-            packages: write
-            contents: read
-        steps:
-            - uses: actions/checkout@v3
-            # Create .npmrc
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 16
+                  node-version: "16.x"
                   registry-url: "https://registry.npmjs.org"
-                  # Defaults to the user or organization that owns the workflow file
-                  scope: "@cmario92"
-            - run: yarn
-            - run: yarn publish
+            - run: npm publish
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
