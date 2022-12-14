@@ -25,7 +25,7 @@ jobs:
                   node-version: 16
                   registry-url: "https://registry.npmjs.org"
                   # Defaults to the user or organization that owns the workflow file
-                  scope: "@houseofcodecy"
+                  scope: "@cmario92"
             - run: yarn
             - run: yarn publish
               env:
