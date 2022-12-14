@@ -1,5 +1,5 @@
 {
-  "name": "@hoc/hoc-components",
+  "name": "@houseofcodecy/hoc-components",
   "version": "1.0.3",
   "description": "A component library for HoC",
   "main": "./lib/cjs/index.js",
@@ -16,10 +16,7 @@
     "copy-files": "copyfiles -f package.json dist",
     "copy-sass": "copyfiles -f src/styles/**/* -e src/styles/theme.scss dist/styles"
   },
-  "publishConfig": {
-    "access": "public",
-    "@houseofcodecy:registry": "https://npm.pkg.github.com"
-  },
+
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.14",
