@@ -1,11 +1,11 @@
 {
-  "name": "@cmario92/hoc-components",
+  "name": "@hoc/hoc-components",
   "version": "1.0.3",
   "description": "A component library for HoC",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
-  "repository": "git@github.com:cmario92/hoc-components.git",
+  "repository": "git@github.com:HouseOfCodeCy/hoc-components.git",
   "author": "c_mario7@hotmail.com",
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
