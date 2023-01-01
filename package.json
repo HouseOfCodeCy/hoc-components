@@ -1,7 +1,7 @@
 {
-  "name": "@hoc/hoc-components",
+  "name": "@houseofcodecy/hoc-components-prime",
   "version": "1.0.3",
-  "description": "A component library for HoC",
+  "description": "A component library consisting of Primereact wrapped components for HoC Projects",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
