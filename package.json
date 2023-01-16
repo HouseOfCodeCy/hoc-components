@@ -5,18 +5,30 @@
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
-  "repository": "git@github.com:HouseOfCodeCy/hoc-components.git",
-  "author": "c_mario7@hotmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HouseOfCodeCy/hoc-components-prime.git"
+  },
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
-    "build": "rm -rf ./dist && tsc && yarn run postbuild",
-    "postbuild": "yarn build-sass && yarn copy-files && yarn copy-sass",
-    "build-sass": "sass --load-path=./node_modules --load-path=./ src/styles/theme.scss dist/styles/theme.scss",
-    "copy-files": "copyfiles -f package.json dist",
-    "copy-sass": "copyfiles -f src/styles/**/* -e src/styles/theme.scss dist/styles"
+    "build": "yarn build:esm && yarn build:cjs",
+    "build-watch": "yarn build:esm --watch && yarn build:cjs --watch",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "link-components": "yarn build && yarn link && cp package.json ./dist",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run prettier && npm run lint"
   },
+  "author": "HoC",
   "license": "MIT",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "devDependencies": {
     "@storybook/addon-links": "^6.5.14",
     "@storybook/builder-webpack5": "^6.5.14",
